@@ -2,7 +2,7 @@ export interface Article {
   id: string;
   title: string;
   body: string;
-  published: Date;
+  published: Date | null;
 }
 
 export interface Admin {
