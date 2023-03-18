@@ -1,4 +1,4 @@
-![image](./image.jpg)
+![image](dist/image.jpg)
 <br>
 ## サンプルのマークダウン
 
