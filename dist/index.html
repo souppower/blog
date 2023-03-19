@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="doge.jpeg" />
     <title>スープ研究所：記事一覧</title>
     <link rel="stylesheet" href="main.css" />
     <style>
@@ -24,22 +25,20 @@
       a:hover {
         text-decoration: underline;
       }
-
-      .flex {
-        display: flex;
-        justify-content: center;
-      }
     </style>
   </head>
-  <body class="flex">
+  <body>
     <div>
       <h1>スープ研究所</h1>
       <ul>
-        <li><a href="hello-world.html">Hello world!</a></li>
-        <li><a href="hello-world.html">記事2のタイトル</a></li>
-        <li><a href="hello-world.html">記事3のタイトル</a></li>
-        <li><a href="hello-world.html">記事4のタイトル</a></li>
+        <li>
+          <div class="label">2023/3/19</div>
+          <a href="hello-world.html">Hello world!</a>
+        </li>
       </ul>
+      <div class="flex" style="max-width: 350px">
+        <img src="doge.jpeg" alt="いっぬの画像" />
+      </div>
     </div>
   </body>
 </html>
