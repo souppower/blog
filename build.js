@@ -10,8 +10,28 @@ const title = process.argv[2];
 const content = fs.readFileSync(`./articles/${title}.md`, 'utf-8');
 const htmlContent = marked(content);
 
+
+function embedDate(template) {
+    function formatDate(date) {
+        const options = {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'short',
+        };
+
+        return date.toLocaleDateString('ja-JP', options);
+    }
+
+    const currentDate = new Date();
+
+    return template.replace('{date}', formatDate(currentDate));
+}
+
 const htmlTemplate = fs.readFileSync('template.html', 'utf-8');
-const finalHtml = htmlTemplate.replace('{content}', htmlContent);
+const temp = embedDate(htmlTemplate);
+
+const finalHtml = temp.replace('{content}', htmlContent);
 
 fs.writeFile(`dist/${title}.html`, finalHtml, (err) => {
     if (err) throw err;
