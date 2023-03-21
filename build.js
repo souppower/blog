@@ -30,6 +30,7 @@ function embedDate(template) {
 
 const htmlTemplate = fs.readFileSync("article-template.html", "utf-8");
 const finalHtml = embedDate(htmlTemplate)
+  .replaceAll("{filePath}", path)
   .replaceAll("{title}", title)
   .replace("{content}", htmlContent);
 
