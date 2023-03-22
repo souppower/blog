@@ -32,7 +32,7 @@ const htmlTemplate = fs.readFileSync("article-template.html", "utf-8");
 
 const ogpMeta = `
     <meta property="og:url" content="https://souplab.dev/${path}" />
-    <meta property="og:type" content="blog" />
+    <meta property="og:type" content="article" />
     <meta property="og:image" content="https://souplab.dev/doge.jpeg" />
     <meta property="og:title" content="スープ研究所" />
     <meta property="og:description" content="🐟" />
