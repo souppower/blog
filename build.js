@@ -29,7 +29,21 @@ function embedDate(template) {
 }
 
 const htmlTemplate = fs.readFileSync("article-template.html", "utf-8");
+
+const ogpMeta = `
+    <meta property="og:url" content="https://souplab.dev/${path}" />
+    <meta property="og:type" content="blog" />
+    <meta property="og:image" content="https://souplab.dev/doge.jpeg" />
+    <meta property="og:title" content="スープ研究所" />
+    <meta property="og:description" content="🐟" />
+    <meta property="og:image" content="https://souplab.dev/doge.jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="スープ研究所" />
+    <meta name="twitter:description" content="🐟" />
+    <meta name="twitter:image" content="https://souplab.dev/doge.jpeg" />`;
+
 const finalHtml = embedDate(htmlTemplate)
+  .replaceAll("{ogp}", ogpMeta)
   .replaceAll("{filePath}", path)
   .replaceAll("{title}", title)
   .replace("{content}", htmlContent);
